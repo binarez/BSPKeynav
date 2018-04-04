@@ -1,0 +1,52 @@
+{
+	"manifest_version": 2,
+	"name": "keynav",
+	"version": "1.0",
+
+	"description": "Allow keyboard browsing using a quadtree-like approach.",
+
+	"icons": {
+		"48": "icons/border-48.png"
+	},
+
+	"applications": {
+	    "gecko": {
+	      "id": "s_keynav@binarez.com",
+	      "strict_min_version": "60.0b5"
+	    }
+  	},
+
+	"commands": {
+	  "keynav-toggle": {
+  			"suggested_key": { "default": "Ctrl+Shift+Space"	},
+  			"description": ""
+  	  },
+	  "keynav-up": {
+			"suggested_key": { "default": "Ctrl+Shift+Up"	},
+			"description": ""
+	  },
+	  "keynav-down": {
+			"suggested_key": { "default": "Ctrl+Shift+Down" },
+			"description": ""
+	  },
+	  "keynav-left": {
+			"suggested_key": { "default": "Ctrl+Shift+Left"	},
+			"description": ""
+	  },
+	  "keynav-right": {
+			"suggested_key": { "default": "Ctrl+Shift+Right" },
+			"description": ""
+	  }
+	},
+
+	"background": {
+    	"scripts": ["keybrowser-back.js"]
+  	},
+
+	"content_scripts": [
+	  {
+	    "matches": ["<all_urls>"],
+	    "js": ["keybrowser-front.js"]
+	  }
+	]
+}
